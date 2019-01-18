@@ -10,9 +10,10 @@ public class playerControl : MonoBehaviour
 
     public bool forward = false;
     public bool backward = false;
-    public bool left = false;
-    public bool right = false;
-    public bool jump = false;
+    public bool turnleft = false;
+    public bool turnright = false;
+    public bool strafeleft = false;
+    public bool straferight = false;
     public bool fire = false;
 
     // Start is called before the first frame update
@@ -31,7 +32,6 @@ public class playerControl : MonoBehaviour
         backward = false;
         left = false;
         right = false;
-        jump = false;
         fire = false;
         
         if (Input.GetKey(KeyCode.W) )
@@ -40,15 +40,23 @@ public class playerControl : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A) )
         {
-            left = true;
+            strafeleft = true;
         }
         if (Input.GetKey(KeyCode.D) )
         {
-            right = true;
+            straferight = true;
         }
         if (Input.GetKey(KeyCode.S) )
         {
             backward = true;
+        }
+        if (Input.GetKey(KeyCode.Q) )
+        {
+            turnleft = true;
+        }
+        if (Input.GetKey(KeyCode.E) )
+        {
+            turnright = true;
         }
     }
 }
